@@ -200,18 +200,18 @@ export default function TestimonialsSection() {
         </div>
 
         {/* Link to Dedicated Page with WhatsApp Screenshots & Audio */}
-        <div className="mt-16 text-center">
-          <div className="inline-flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-5 p-5 sm:p-6 rounded-2xl bg-gradient-to-r from-[#1B4332]/80 via-[#2D6A4F]/60 to-[#1B4332]/80 border border-[#D4A843]/30 shadow-xl max-w-xl mx-auto backdrop-blur-md">
+        <div className="mt-16 text-center px-2">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-5 p-4 sm:p-6 rounded-2xl bg-gradient-to-r from-[#1B4332]/90 via-[#2D6A4F]/70 to-[#1B4332]/90 border border-[#D4A843]/40 shadow-xl max-w-xl mx-auto backdrop-blur-md w-full">
             <div className="w-12 h-12 rounded-full bg-[#25D366]/20 border border-[#25D366]/40 flex items-center justify-center text-[#25D366] shrink-0 aspect-square shadow-inner">
               <MessageCircle className="w-6 h-6" />
             </div>
 
             <Link
               href="/temoignages"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-[#D4A843] to-[#B8860B] hover:from-[#E6C875] hover:to-[#D4A843] text-[#112219] font-bold text-sm transition-all duration-300 shadow-lg hover:shadow-gold-antique/20 hover:scale-[1.02] whitespace-nowrap"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-gradient-to-r from-[#D4A843] to-[#B8860B] hover:from-[#E6C875] hover:to-[#D4A843] text-[#112219] font-bold text-xs sm:text-sm transition-all duration-300 shadow-lg text-center"
             >
               <span>Voir tous les témoignages WhatsApp & Vocaux</span>
-              <ArrowRight className="w-4 h-4" />
+              <ArrowRight className="w-4 h-4 shrink-0" />
             </Link>
           </div>
         </div>

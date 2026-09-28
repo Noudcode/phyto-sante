@@ -17,9 +17,9 @@ export default function ContactPage() {
             src="/images/hero_bg.jpg"
             alt="Contact Cabinet Phyto Santé"
             fill
-            className="object-cover opacity-25 filter brightness-75"
+            className="object-cover opacity-65 sm:opacity-25 filter brightness-90 sm:brightness-75"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0A1F16] via-[#0A1F16]/80 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0A1F16] via-[#0A1F16]/50 sm:via-[#0A1F16]/80 to-transparent" />
         </div>
         <Container className="relative z-10 text-center">
           <span className="text-xs sm:text-sm uppercase tracking-[0.25em] font-semibold text-[#D4A843] block mb-3">

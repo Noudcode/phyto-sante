@@ -34,10 +34,10 @@ export default function PhilosophiePage() {
             alt="Philosophie Phyto Santé - Le Monde Invisible et Visible"
             fill
             priority
-            className="object-cover opacity-25 filter brightness-75 scale-105"
+            className="object-cover opacity-65 sm:opacity-25 filter brightness-90 sm:brightness-75 scale-105"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0A1F16] via-[#0A1F16]/80 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0A1F16] via-[#0A1F16]/60 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0A1F16] via-[#0A1F16]/50 sm:via-[#0A1F16]/80 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0A1F16]/80 via-[#0A1F16]/40 sm:via-[#0A1F16]/60 to-transparent" />
         </div>
 
         <Container className="relative z-10">

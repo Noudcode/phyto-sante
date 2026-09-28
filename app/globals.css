@@ -1,4 +1,6 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 @layer base {
   :root {
@@ -130,4 +132,26 @@
 
 ::-webkit-scrollbar-thumb:hover {
   background: #1B4332;
+}
+
+/* Mobile & Touch Optimizations */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Mobile Touch Press Active Effect */
+.touch-active:active {
+  transform: scale(0.97);
+}
+
+.text-balance {
+  text-wrap: balance;
 }

@@ -17,22 +17,22 @@ import {
 export default function BoutiqueShowcaseSection() {
   return (
     <section className="relative py-20 lg:py-28 bg-[#0A1F16] text-white overflow-hidden border-y border-[#B8860B]/30 min-h-[85vh] flex items-center">
-      {/* Exact Phyto Santé Product Background Image */}
+      {/* Exact Phyto Santé Product Background Image focused on the bottle */}
       <div className="absolute inset-0 z-0">
         <Image
           src="/images/boutique_showcase_bg.jpg"
           alt="Tonique Naturel Phyto Santé - Bouteille et plantes"
           fill
           priority
-          className="object-cover object-right filter brightness-95 scale-105"
+          className="object-cover object-[82%_center] sm:object-right filter brightness-100 sm:brightness-95 opacity-85 sm:opacity-100 scale-100"
         />
-        {/* Dark Gradient Overlay on Left Side for Optimal Text Legibility */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0A1F16] via-[#0A1F16]/90 to-transparent lg:w-3/4" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0A1F16] via-transparent to-[#0A1F16]/40" />
+        {/* Soft Dark Gradient Overlay keeping bottle background completely visible */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0A1F16]/90 via-[#0A1F16]/60 to-[#0A1F16]/20 sm:from-[#0A1F16] sm:via-[#0A1F16]/85 sm:to-transparent lg:w-3/4" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0A1F16] via-transparent to-[#0A1F16]/25" />
       </div>
 
       <Container className="relative z-10">
-        <div className="max-w-2xl space-y-8">
+        <div className="max-w-2xl space-y-6 sm:space-y-8">
           {/* Badge */}
           <AnimateOnScroll animation="fade-down">
             <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-[#1B4332]/90 border border-[#D4A843]/50 shadow-lg backdrop-blur-md">
