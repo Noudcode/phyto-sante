@@ -530,6 +530,102 @@ export default function ProductDetailView({ product }: ProductDetailViewProps) {
               </div>
             ))}
           </div>
+
+          {/* Submit New Review Form */}
+          <div className="pt-6 border-t border-gray-100">
+            <div className="bg-[#FAF8F5] p-5 sm:p-8 rounded-2xl border border-[#D4A843]/30 space-y-4">
+              <div className="flex items-center gap-2">
+                <MessageCircle className="w-5 h-5 text-[#B8860B]" />
+                <h3 className="text-lg font-serif font-bold text-[#1B4332]">
+                  Laisser un avis sur ce produit
+                </h3>
+              </div>
+              <p className="text-xs text-gray-600 font-light">
+                Votre avis aide les futurs consultants à choisir la meilleure préparation naturelle.
+              </p>
+
+              {showSuccessToast && (
+                <div className="p-4 rounded-xl bg-emerald-100 border border-emerald-300 text-emerald-900 text-xs sm:text-sm font-medium flex items-center gap-2 animate-fadeIn">
+                  <CheckCircle2 className="w-5 h-5 text-emerald-700 shrink-0" />
+                  <span>Merci ! Votre avis a été enregistré et publié avec succès.</span>
+                </div>
+              )}
+
+              <form onSubmit={handleSubmitReview} className="space-y-4 pt-2">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {/* Name input */}
+                  <div className="space-y-1">
+                    <label className="text-xs font-semibold text-gray-700 block">
+                      Votre nom / prénom *
+                    </label>
+                    <input
+                      type="text"
+                      required
+                      placeholder="Ex: Kouassi Marc"
+                      value={newAuthor}
+                      onChange={(e) => setNewAuthor(e.target.value)}
+                      className="w-full px-4 py-2.5 rounded-xl border border-gray-300 bg-white text-xs sm:text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#1B4332]"
+                    />
+                  </div>
+
+                  {/* Rating Selector */}
+                  <div className="space-y-1">
+                    <label className="text-xs font-semibold text-gray-700 block">
+                      Votre note *
+                    </label>
+                    <div className="flex items-center gap-1.5 pt-1">
+                      {[1, 2, 3, 4, 5].map((star) => (
+                        <button
+                          key={star}
+                          type="button"
+                          onClick={() => setNewRating(star)}
+                          onMouseEnter={() => setHoverRating(star)}
+                          onMouseLeave={() => setHoverRating(0)}
+                          className="p-1 text-amber-400 hover:scale-110 transition-transform focus:outline-none"
+                        >
+                          <Star
+                            className={`w-6 h-6 ${
+                              star <= (hoverRating || newRating)
+                                ? "fill-amber-400 text-amber-400"
+                                : "text-gray-300"
+                            }`}
+                          />
+                        </button>
+                      ))}
+                      <span className="text-xs font-bold text-gray-700 ml-2">
+                        {newRating} / 5
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Comment Textarea */}
+                <div className="space-y-1">
+                  <label className="text-xs font-semibold text-gray-700 block">
+                    Votre commentaire / témoignage *
+                  </label>
+                  <textarea
+                    required
+                    rows={3}
+                    placeholder="Racontez votre expérience avec ce traitement naturel..."
+                    value={newComment}
+                    onChange={(e) => setNewComment(e.target.value)}
+                    className="w-full px-4 py-2.5 rounded-xl border border-gray-300 bg-white text-xs sm:text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#1B4332]"
+                  />
+                </div>
+
+                {/* Submit Button */}
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[#1B4332] hover:bg-[#2D6A4F] text-white font-bold text-xs sm:text-sm transition-all shadow-md touch-active"
+                >
+                  <Send className="w-4 h-4" />
+                  <span>{isSubmitting ? "Envoi en cours..." : "Publier mon avis"}</span>
+                </button>
+              </form>
+            </div>
+          </div>
         </div>
       </Container>
 

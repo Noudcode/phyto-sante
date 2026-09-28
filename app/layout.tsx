@@ -40,6 +40,8 @@ export const metadata: Metadata = {
   },
 };
 
+import ProtectionProvider from "@/components/ui/ProtectionProvider";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -48,10 +50,12 @@ export default function RootLayout({
   return (
     <html lang="fr" className={`${playfair.variable} ${inter.variable}`}>
       <body className="min-h-screen flex flex-col antialiased selection:bg-[#B8860B] selection:text-white">
-        <Header />
-        <main className="flex-grow">{children}</main>
-        <Footer />
-        <FloatingWhatsApp />
+        <ProtectionProvider>
+          <Header />
+          <main className="flex-grow">{children}</main>
+          <Footer />
+          <FloatingWhatsApp />
+        </ProtectionProvider>
       </body>
     </html>
   );
