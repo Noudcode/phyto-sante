@@ -11,8 +11,7 @@ import {
   ShieldCheck, 
   MapPin, 
   Calendar,
-  FileText,
-  Sparkles
+  FileText
 } from "lucide-react";
 
 interface AudioCardProps {
@@ -22,78 +21,54 @@ interface AudioCardProps {
 export default function AudioPlayerCard({ testimonial }: AudioCardProps) {
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
+  const [duration, setDuration] = useState(testimonial.durationSeconds);
   const [playbackSpeed, setPlaybackSpeed] = useState<number>(1);
   const [isMuted, setIsMuted] = useState(false);
   const [showFullTranscript, setShowFullTranscript] = useState(false);
 
-  const audioCtxRef = useRef<AudioContext | null>(null);
-  const timerRef = useRef<NodeJS.Timeout | null>(null);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
 
-  // Web Audio Synthesizer for smooth voice-tone reproduction
-  const startAudioSynth = () => {
-    try {
-      if (!audioCtxRef.current) {
-        const AudioContextClass = window.AudioContext || (window as unknown as { webkitAudioContext: typeof AudioContext }).webkitAudioContext;
-        audioCtxRef.current = new AudioContextClass();
-      }
-      if (audioCtxRef.current.state === "suspended") {
-        audioCtxRef.current.resume();
-      }
-
-      const ctx = audioCtxRef.current;
-      const osc = ctx.createOscillator();
-      const gain = ctx.createGain();
-
-      // Gentle vocal harmonic frequency modulation
-      osc.type = "sine";
-      osc.frequency.setValueAtTime(220 + (testimonial.frequencyPreset[0] || 40), ctx.currentTime);
-
-      gain.gain.setValueAtTime(isMuted ? 0 : 0.05, ctx.currentTime);
-      gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.4);
-
-      osc.connect(gain);
-      gain.connect(ctx.destination);
-
-      osc.start();
-      osc.stop(ctx.currentTime + 0.4);
-    } catch {
-      // Graceful fallback if Web Audio API blocked
+  // Sync playback speed and volume on audio element
+  useEffect(() => {
+    if (audioRef.current) {
+      audioRef.current.playbackRate = playbackSpeed;
+      audioRef.current.muted = isMuted;
     }
-  };
+  }, [playbackSpeed, isMuted]);
 
   const togglePlay = () => {
+    if (!audioRef.current) return;
+
     if (isPlaying) {
+      audioRef.current.pause();
       setIsPlaying(false);
-      if (timerRef.current) clearInterval(timerRef.current);
     } else {
-      setIsPlaying(true);
-      startAudioSynth();
+      audioRef.current
+        .play()
+        .then(() => setIsPlaying(true))
+        .catch((err) => console.log("Audio play error:", err));
     }
   };
 
-  useEffect(() => {
-    if (isPlaying) {
-      timerRef.current = setInterval(() => {
-        setCurrentTime((prev) => {
-          if (prev >= testimonial.durationSeconds) {
-            setIsPlaying(false);
-            if (timerRef.current) clearInterval(timerRef.current);
-            return 0;
-          }
-          startAudioSynth();
-          return prev + 1 * playbackSpeed;
-        });
-      }, 1000 / playbackSpeed);
-    } else {
-      if (timerRef.current) clearInterval(timerRef.current);
+  const handleTimeUpdate = () => {
+    if (audioRef.current) {
+      setCurrentTime(audioRef.current.currentTime);
     }
+  };
 
-    return () => {
-      if (timerRef.current) clearInterval(timerRef.current);
-    };
-  }, [isPlaying, playbackSpeed, testimonial.durationSeconds]);
+  const handleLoadedMetadata = () => {
+    if (audioRef.current && audioRef.current.duration) {
+      setDuration(Math.floor(audioRef.current.duration));
+    }
+  };
+
+  const handleEnded = () => {
+    setIsPlaying(false);
+    setCurrentTime(0);
+  };
 
   const formatTime = (seconds: number) => {
+    if (isNaN(seconds) || seconds < 0) return "0:00";
     const mins = Math.floor(seconds / 60);
     const secs = Math.floor(seconds % 60);
     return `${mins}:${secs < 10 ? "0" : ""}${secs}`;
@@ -102,6 +77,9 @@ export default function AudioPlayerCard({ testimonial }: AudioCardProps) {
   const handleSeek = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newTime = parseFloat(e.target.value);
     setCurrentTime(newTime);
+    if (audioRef.current) {
+      audioRef.current.currentTime = newTime;
+    }
   };
 
   const toggleSpeed = () => {
@@ -112,6 +90,18 @@ export default function AudioPlayerCard({ testimonial }: AudioCardProps) {
 
   return (
     <div className="glass-panel-dark rounded-3xl p-6 sm:p-8 border border-[#25D366]/30 hover:border-[#25D366]/60 transition-all duration-300 shadow-xl relative flex flex-col justify-between">
+      {/* Hidden HTML5 Audio element */}
+      {testimonial.audioUrl && (
+        <audio
+          ref={audioRef}
+          src={testimonial.audioUrl}
+          preload="metadata"
+          onTimeUpdate={handleTimeUpdate}
+          onLoadedMetadata={handleLoadedMetadata}
+          onEnded={handleEnded}
+        />
+      )}
+
       {/* Top Header info */}
       <div>
         <div className="flex items-center justify-between mb-4">
@@ -161,7 +151,7 @@ export default function AudioPlayerCard({ testimonial }: AudioCardProps) {
             {/* Audio Waveform Animation */}
             <div className="flex-1 flex items-center gap-1 h-12 px-2 overflow-hidden">
               {testimonial.frequencyPreset.map((heightPercent, index) => {
-                const isActive = (currentTime / testimonial.durationSeconds) * testimonial.frequencyPreset.length > index;
+                const isActive = (currentTime / (duration || 1)) * testimonial.frequencyPreset.length > index;
                 return (
                   <div
                     key={index}
@@ -209,14 +199,14 @@ export default function AudioPlayerCard({ testimonial }: AudioCardProps) {
             <input
               type="range"
               min="0"
-              max={testimonial.durationSeconds}
+              max={duration || 1}
               value={currentTime}
               onChange={handleSeek}
               className="flex-1 h-1.5 bg-white/20 rounded-lg appearance-none cursor-pointer accent-[#25D366]"
             />
 
             <span className="text-xs font-mono text-gray-400 min-w-[32px]">
-              {testimonial.durationFormatted}
+              {formatTime(duration)}
             </span>
           </div>
         </div>

@@ -252,9 +252,9 @@ export const productsData: Product[] = [
       "Préparation traditionnelle à base de plantes sélectionnées (Moringa, Oranger, Chêne, Néricula, Bifolia) dédiée au bien-être et au confort du foie.",
     description:
       "Une préparation de plantes proposée par Phyto Santé, élaborée à partir de plantes sélectionnées et présentée comme une solution naturelle destinée au bien-être du foie. Préparation réalisée au Bénin, sans aucun conservateur, inspirée du savoir-faire traditionnel ancestral.",
-    price: 8000,
-    originalPrice: 10000,
-    savings: 2000,
+    price: 100000,
+    originalPrice: 150000,
+    savings: 50000,
     currency: "FCFA",
     image: "/img/Pro 3.png",
     posterImage: "/img/A-Pro 3.png",
@@ -292,9 +292,9 @@ export const productsData: Product[] = [
     ],
     posology: {
       instruction:
-        "2 cuillères à café dans ½ verre d'eau tiède, le matin et le soir, pendant 2 mois, selon les indications figurant sur l'étiquette.",
+        "2 cuillères à café dans ½ verre d'eau tiède, le matin et le soir, pendant 3 mois, selon les indications figurant sur l'étiquette.",
       recommendation:
-        "Offre Spéciale Duo : 2 boîtes = 8 000 F CFA (soit 4 000 F CFA la boîte). Respecter la durée d'utilisation recommandée et demander conseil à Phyto Santé.",
+        "Offre Spéciale Traitement : 100 000 F CFA au lieu de 150 000 F CFA. Respecter la durée d'utilisation recommandée (3 mois) et demander conseil à Phyto Santé.",
     },
     keyPoints: [
       {
@@ -321,7 +321,7 @@ export const productsData: Product[] = [
         date: "20 Septembre 2026",
         rating: 5,
         comment:
-          "Une préparation de grande qualité. Après 1 mois d'utilisation à raison de 2 cuillères matin et soir, mon confort hépatique s'est nettement amélioré. L'offre lot 2 boîtes à 8 000 F CFA est très avantageuse !",
+          "Une préparation de grande qualité. Après 1 mois d'utilisation à raison de 2 cuillères matin et soir, mon confort hépatique s'est nettement amélioré. L'offre promotionnelle à 100 000 F CFA est très avantageuse !",
         verified: true,
       },
       {

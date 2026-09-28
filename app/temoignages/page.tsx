@@ -65,7 +65,7 @@ export default function TemoignagesPage() {
             </h1>
 
             <p className="text-gray-300 text-base sm:text-lg leading-relaxed mb-10">
-              Découvrez en toute transparence les captures d&apos;écran WhatsApp réelles et les messages vocaux enregistrés par nos consultants au Bénin et à l&apos;international.
+              Découvrez en toute transparence les captures d&apos;écran WhatsApp réelles et les messages vocaux enregistrés par nos consultants au Burkina Faso et à l&apos;international.
             </p>
 
             {/* Stats Counter Bar */}
@@ -105,7 +105,7 @@ export default function TemoignagesPage() {
                   : "text-gray-600 hover:text-[#1B4332]"
               }`}
             >
-              Tous les témoignages (10)
+              Tous les témoignages ({whatsappScreenshots.length + audioTestimonials.length})
             </button>
 
             <button
@@ -117,7 +117,7 @@ export default function TemoignagesPage() {
               }`}
             >
               <MessageSquare className="w-4 h-4" />
-              Captures WhatsApp (5)
+              Captures WhatsApp ({whatsappScreenshots.length})
             </button>
 
             <button
@@ -129,7 +129,7 @@ export default function TemoignagesPage() {
               }`}
             >
               <Mic className="w-4 h-4" />
-              Témoignages Vocaux (5)
+              Témoignages Vocaux ({audioTestimonials.length})
             </button>
           </div>
 
@@ -161,7 +161,7 @@ export default function TemoignagesPage() {
                 </div>
                 <div>
                   <h2 className="text-2xl sm:text-3xl font-serif font-bold text-[#1B4332]">
-                    Captures d&apos;Écran WhatsApp (5 Preuves)
+                    Captures d&apos;Écran WhatsApp ({whatsappScreenshots.length} Preuves)
                   </h2>
                   <p className="text-xs sm:text-sm text-gray-600">
                     Messages authentiques reçus sur le WhatsApp officiel d&apos;Adayé Phyto Santé
@@ -198,7 +198,7 @@ export default function TemoignagesPage() {
                 </div>
                 <div>
                   <h2 className="text-2xl sm:text-3xl font-serif font-bold text-[#1B4332]">
-                    Témoignages Vocaux Audio (5 Enregistrements)
+                    Témoignages Vocaux Audio ({audioTestimonials.length} Enregistrements)
                   </h2>
                   <p className="text-xs sm:text-sm text-gray-600">
                     Écoutez directement les vocaux audio envoyés par nos consultants reconnaissants
