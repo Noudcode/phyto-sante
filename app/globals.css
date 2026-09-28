@@ -1,0 +1,133 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-primary: #1B4332;
+    --color-primary-light: #2D6A4F;
+    --color-gold: #B8860B;
+    --color-gold-light: #D4A843;
+    --color-gold-muted: #E6C875;
+    --color-sienna: #8B5E3C;
+    --color-bg-main: #FAF8F5;
+    --color-bg-alt: #F3EDE4;
+    --color-dark: #1A1A1A;
+    --color-dark-surface: #112219;
+    --color-text-main: #2C2C2C;
+    --color-text-muted: #6B6B6B;
+    --color-whatsapp: #25D366;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-bg-main);
+    color: var(--color-text-main);
+    font-family: var(--font-inter), sans-serif;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, .font-serif {
+    font-family: var(--font-playfair), serif;
+  }
+}
+
+/* Custom Utilities */
+.bg-primary-forest {
+  background-color: #1B4332;
+}
+
+.bg-primary-sage {
+  background-color: #2D6A4F;
+}
+
+.bg-gold-antique {
+  background-color: #B8860B;
+}
+
+.bg-cream-lin {
+  background-color: #F3EDE4;
+}
+
+.bg-warm-offwhite {
+  background-color: #FAF8F5;
+}
+
+.bg-charcoal {
+  background-color: #1A1A1A;
+}
+
+.text-gold-antique {
+  color: #B8860B;
+}
+
+.text-gold-light {
+  color: #D4A843;
+}
+
+.text-primary-forest {
+  color: #1B4332;
+}
+
+.text-primary-sage {
+  color: #2D6A4F;
+}
+
+.border-gold-subtle {
+  border-color: rgba(184, 134, 11, 0.3);
+}
+
+.border-gold-accent {
+  border-color: #B8860B;
+}
+
+/* Gold Gradient Text */
+.gold-gradient-text {
+  background: linear-gradient(135deg, #D4A843 0%, #B8860B 50%, #8B5E3C 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Glassmorphism card */
+.glass-panel-dark {
+  background: rgba(27, 67, 50, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(212, 168, 67, 0.2);
+}
+
+.glass-header {
+  background: rgba(10, 25, 18, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(212, 168, 67, 0.15);
+}
+
+/* Subtle Card Glow */
+.gold-hover-glow {
+  transition: all 0.35s ease;
+}
+
+.gold-hover-glow:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px -8px rgba(184, 134, 11, 0.15), 0 0 0 1px rgba(212, 168, 67, 0.4);
+}
+
+/* Scrollbar customization */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FAF8F5;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2D6A4F;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #1B4332;
+}
