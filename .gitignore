@@ -42,3 +42,4 @@ next-env.d.ts
 *.zip
 /wordpress-plugin/
 /img/
+!/public/img/
