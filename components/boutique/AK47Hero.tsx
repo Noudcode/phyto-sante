@@ -7,7 +7,7 @@ import { ShieldCheck, Zap, CheckCircle2 } from "lucide-react";
 export default function AK47Hero() {
   return (
     <section 
-      className="relative w-full bg-[#071710] overflow-hidden flex flex-col justify-center pt-20 pb-6 sm:pt-28 sm:pb-10 text-white select-none"
+      className="relative w-full min-h-[80vh] sm:min-h-0 bg-[#071710] overflow-hidden flex flex-col justify-center pt-20 pb-12 sm:pt-28 sm:pb-10 text-white select-none"
     >
       {/* DEDICATED RESPONSIVE HERO IMAGES (PC/DESKTOP & MOBILE) */}
       <div className="absolute inset-0 z-0">
@@ -98,6 +98,9 @@ export default function AK47Hero() {
             >
               <span>Découvrir la formule</span>
             </a>
+
+            {/* Espace réservé sur mobile équivalent au bouton retiré sans l'afficher pour préserver la hauteur exacte et la vue de l'image */}
+            <div className="h-14 sm:hidden w-full pointer-events-none select-none" aria-hidden="true" />
           </div>
         </div>
       </div>

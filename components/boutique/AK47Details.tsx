@@ -79,43 +79,43 @@ export default function AK47Details() {
           {/* Left Column: Product Bottle Display (5 cols on lg) */}
           <div className="lg:col-span-5">
             <div 
-              className="relative rounded-3xl border-2 border-emerald-800/60 bg-[#0B2217] overflow-hidden p-3 sm:p-6 shadow-2xl group cursor-pointer flex items-center justify-center"
+              className="relative rounded-3xl border-2 border-emerald-800/60 bg-[#0B2217] p-3 sm:p-4 shadow-2xl group cursor-pointer space-y-3"
               onClick={() => setIsLightboxOpen(true)}
             >
               {/* Top Left Promo Pill Badge */}
-              <div className="absolute top-4 left-4 z-20 bg-gradient-to-r from-red-600 to-amber-600 text-white font-bold text-[11px] uppercase tracking-wider px-3 py-1.5 rounded-full shadow-lg flex items-center gap-1.5 animate-pulse">
+              <div className="absolute top-5 left-5 z-20 bg-gradient-to-r from-red-600 to-amber-600 text-white font-bold text-[11px] uppercase tracking-wider px-3 py-1.5 rounded-full shadow-lg flex items-center gap-1.5 animate-pulse">
                 <Flame className="w-3.5 h-3.5" />
                 <span>PROMO -47%</span>
               </div>
 
               {/* Top Right 100% Natural Pill Badge */}
-              <div className="absolute top-4 right-4 z-20 bg-[#071710]/90 backdrop-blur-md border border-emerald-500/40 text-emerald-400 font-semibold text-[11px] px-3 py-1.5 rounded-full flex items-center gap-1.5 shadow-md">
+              <div className="absolute top-5 right-5 z-20 bg-[#071710]/90 backdrop-blur-md border border-emerald-500/40 text-emerald-400 font-semibold text-[11px] px-3 py-1.5 rounded-full flex items-center gap-1.5 shadow-md">
                 <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
                 <span>100% Naturel</span>
               </div>
 
-              {/* Product Bottle Image */}
-              <div className="relative w-full aspect-[4/5] max-h-[500px] flex items-center justify-center">
+              {/* Product Bottle Image Viewport (Bords arrondis comme sur l'affiche officielle) */}
+              <div className="relative w-full aspect-[4/5] max-h-[500px] rounded-2xl overflow-hidden bg-black/40 border border-emerald-900/60 flex items-center justify-center">
                 <Image
                   src="/img/ak47_product.png"
                   alt="AK 47 Phyto Santé – Dûre au lit"
                   fill
                   priority
                   sizes="(max-width: 1024px) 100vw, 40vw"
-                  className="object-contain group-hover:scale-105 transition-transform duration-500 drop-shadow-2xl"
+                  className="object-contain rounded-2xl group-hover:scale-105 transition-transform duration-500 drop-shadow-2xl"
                 />
               </div>
 
-              {/* Zoom Trigger Button */}
+              {/* Bottom Frame Trigger Button (Comme sur l'affiche officielle) */}
               <button
                 onClick={(e) => {
                   e.stopPropagation();
                   setIsLightboxOpen(true);
                 }}
-                className="absolute bottom-4 right-4 z-20 bg-black/60 backdrop-blur-md hover:bg-black text-[#D4A843] p-2.5 rounded-full border border-[#D4A843]/40 transition-transform hover:scale-110"
-                title="Agrandir l'image"
+                className="w-full bg-[#071710] hover:bg-[#113123] text-white hover:text-[#D4A843] py-3 px-4 rounded-xl text-xs sm:text-sm font-bold border border-[#D4A843]/30 transition-all flex items-center justify-center gap-2 shadow-md touch-active"
               >
-                <Maximize2 className="w-4.5 h-4.5" />
+                <Maximize2 className="w-4 h-4 text-[#D4A843]" />
+                <span>Voir le produit en grand</span>
               </button>
             </div>
           </div>
