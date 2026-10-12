@@ -7,7 +7,7 @@ import { ShieldCheck, Zap, CheckCircle2 } from "lucide-react";
 export default function AK47Hero() {
   return (
     <section 
-      className="relative min-h-[92vh] sm:min-h-screen w-full bg-[#071710] overflow-hidden flex flex-col justify-between py-12 text-white select-none"
+      className="relative w-full bg-[#071710] overflow-hidden flex flex-col justify-center pt-20 pb-6 sm:pt-28 sm:pb-10 text-white select-none"
     >
       {/* DEDICATED RESPONSIVE HERO IMAGES (PC/DESKTOP & MOBILE) */}
       <div className="absolute inset-0 z-0">
@@ -46,7 +46,7 @@ export default function AK47Hero() {
       <div className="absolute bottom-10 left-10 w-80 h-80 bg-[#1B4332]/40 rounded-full blur-3xl pointer-events-none z-10" />
 
       {/* HERO CONTENT OVERLAY */}
-      <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full my-auto py-16 sm:py-24 flex flex-col justify-center items-center text-center">
+      <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-8 sm:py-12 flex flex-col justify-center items-center text-center">
         
         {/* MAIN PRODUCT TITLE & SUBTITLE */}
         <div className="max-w-4xl mx-auto space-y-4 sm:space-y-6">
@@ -80,18 +80,21 @@ export default function AK47Hero() {
           </div>
 
           {/* QUICK HERO CTA (MOBILE & DESKTOP) */}
-          <div className="pt-6 flex flex-col sm:flex-row items-center justify-center gap-3 w-full sm:w-auto px-2">
+          <div className="pt-10 sm:pt-14 mt-2 sm:mt-4 flex flex-col sm:flex-row items-center justify-center gap-3.5 sm:gap-4 w-full sm:w-auto px-2">
+            {/* Button 1: PUISSANT ET VITALITE (Orange Gradient like homepage hero) */}
             <a
               href="https://wa.me/22605855017?text=Bonjour%20Phyto%20Sant%C3%A9%2C%20je%20souhaite%20commander%20le%20produit%20%3A%20AK%2047%20%E2%80%93%20D%C3%BBre%20au%20lit%20(Offre%20Promo%20%3A%208%20000%20FCFA)."
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-full bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-sm sm:text-base shadow-xl transition-all active:scale-95 touch-active border border-[#25D366]"
+              className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 rounded-full bg-gradient-to-r from-[#FF6B00] via-[#F4511E] to-[#D83600] hover:from-[#E65C00] hover:to-[#C02E00] text-white font-bold text-sm sm:text-base border border-[#FF6B00]/40 shadow-xl shadow-[#FF6B00]/30 transition-all duration-300 transform active:scale-95 touch-active uppercase tracking-wide text-center"
             >
-              <span>Commander (Offre Promo 8 000 F)</span>
+              <span>PUISSANT ET VITALITE</span>
             </a>
+
+            {/* Button 2: Green button */}
             <a
               href="#details"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-white/10 hover:bg-white/20 text-white font-semibold text-xs sm:text-sm border border-white/20 backdrop-blur-md transition-all touch-active"
+              className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 rounded-full bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-sm sm:text-base shadow-xl hover:shadow-[#25D366]/30 border border-[#25D366] transition-all duration-300 transform active:scale-95 touch-active text-center"
             >
               <span>Découvrir la formule</span>
             </a>

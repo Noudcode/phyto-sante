@@ -68,7 +68,7 @@ export default function AK47Details() {
   const whatsappUrl = `https://wa.me/${siteConfig.contact.whatsappNumber}?text=${encodeURIComponent(orderMessage)}`;
 
   return (
-    <div id="details" className="bg-[#071710] text-white py-16 sm:py-24 border-t border-[#D4A843]/20">
+    <div id="details" className="bg-[#071710] text-white pt-6 sm:pt-8 pb-16 sm:pb-24 border-t border-[#D4A843]/20">
       <Container>
         
         {/* ========================================================================= */}
