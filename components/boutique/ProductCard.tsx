@@ -12,7 +12,11 @@ interface ProductCardProps {
 }
 
 export default function ProductCard({ product }: ProductCardProps) {
-  const detailUrl = `/boutique/${product.id}`;
+  const detailUrl =
+    product.customUrl ||
+    (product.id === "prod-ak47" || product.slug === "ak-47"
+      ? "/produits/ak-47"
+      : `/boutique/${product.id}`);
   
   const orderMessage = `Bonjour Phyto Santé, je souhaite commander le produit : ${product.name} (Prix promo : ${product.price.toLocaleString(
     "fr-FR"

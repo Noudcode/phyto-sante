@@ -67,7 +67,7 @@ export default function TestimonialsSection() {
             Ce que nos patients <span className="gold-gradient-text font-serif italic">disent de nous</span>
           </h2>
           <p className="text-gray-300 text-base sm:text-lg leading-relaxed">
-            Découvrez comment la phytothérapie traditionnelle et les secrets ancestraux de Prince Adayé ont transformé la santé et la sérénité de nos consultants.
+            Découvrez comment la phytothérapie traditionnelle et les secrets ancestraux de Togbé Adayé ont transformé la santé et la sérénité de nos consultants.
           </p>
         </div>
 

@@ -301,7 +301,7 @@ export default function PhilosophiePage() {
                 <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
                   <WhatsAppButton
                     variant="gold"
-                    label="Échanger avec Son Altesse Prince Adaye"
+                    label="Échanger avec Son Altesse Togbé Adaye"
                   />
                   <Link
                     href="/contact"

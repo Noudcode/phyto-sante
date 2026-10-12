@@ -103,7 +103,7 @@ export default function BoutiquePage() {
           </h3>
 
           <p className="text-xs sm:text-base text-[#6B6B6B] max-w-2xl mx-auto leading-relaxed font-light">
-            Pour toute demande spécifique ou conseil avant achat, échangez directement avec Prince ADAYE et l'équipe Phyto Santé via WhatsApp.
+            Pour toute demande spécifique ou conseil avant achat, échangez directement avec Togbé ADAYE et l'équipe Phyto Santé via WhatsApp.
           </p>
 
           <WhatsAppButton

@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   description: siteConfig.description,
   keywords: [
     "Phyto Santé",
-    "Prince ADAYE",
+    "Togbé ADAYE",
     "Solutions naturelles",
     "Accompagnement spirituel",
     "Fertilité naturelle",
@@ -31,12 +31,28 @@ export const metadata: Metadata = {
     "Harmonie conjugale",
     "Tradition béninoise",
   ],
+  icons: {
+    icon: [
+      { url: "/images/logo_emblem.png" },
+      { url: "/images/logo_emblem.png", type: "image/png" },
+    ],
+    shortcut: "/images/logo_emblem.png",
+    apple: "/images/logo_emblem.png",
+  },
   openGraph: {
     title: siteConfig.name,
     description: siteConfig.description,
     siteName: siteConfig.name,
     type: "website",
     locale: "fr_FR",
+    images: [
+      {
+        url: "/images/logo_emblem.png",
+        width: 800,
+        height: 800,
+        alt: siteConfig.name,
+      },
+    ],
   },
 };
 

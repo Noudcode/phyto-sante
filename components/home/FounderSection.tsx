@@ -12,7 +12,7 @@ export default function FounderSection() {
     <section className="py-20 lg:py-28 bg-[#FAF8F5] relative overflow-hidden">
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-          {/* Left Column: Portrait of Prince ADAYE */}
+          {/* Left Column: Portrait of Togbé ADAYE */}
           <div className="lg:col-span-5">
             <AnimateOnScroll animation="slide-right">
               <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-[#B8860B]/30 group">

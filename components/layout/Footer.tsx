@@ -1,5 +1,8 @@
+"use client";
+
 import React from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Phone, MapPin, Clock, MessageCircle, Leaf, Facebook, Instagram, Youtube } from "lucide-react";
 import Container from "@/components/ui/Container";
 import { footerNavItems } from "@/data/navigation";
@@ -8,6 +11,13 @@ import { siteConfig } from "@/data/site-config";
 import PhytoSanteLogo from "@/components/ui/PhytoSanteLogo";
 
 export default function Footer() {
+  const pathname = usePathname();
+
+  // Hide footer on dedicated AK-47 product page as requested
+  if (pathname === "/produits/ak-47" || pathname?.startsWith("/produits/ak-47")) {
+    return null;
+  }
+
   const currentYear = new Date().getFullYear();
   const whatsappUrl = `https://wa.me/${siteConfig.contact.whatsappNumber}?text=${encodeURIComponent(
     siteConfig.contact.whatsappDefaultMessage

@@ -22,6 +22,11 @@ export default function FloatingWhatsApp() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Hide floating WhatsApp button on dedicated AK-47 product page as requested
+  if (pathname === "/produits/ak-47" || pathname?.startsWith("/produits/ak-47")) {
+    return null;
+  }
+
   if (!isVisible) return null;
 
   const whatsappUrl = `https://wa.me/${siteConfig.contact.whatsappNumber}?text=${encodeURIComponent(

@@ -21,6 +21,7 @@ export interface ProductReview {
 export interface Product {
   id: string;
   slug: string;
+  customUrl?: string;
   name: string;
   category: string;
   shortDescription: string;
@@ -45,7 +46,59 @@ export interface Product {
   reviews?: ProductReview[];
 }
 
+// Produit AK-47 — Redirige directement vers sa page de vente dédiée (/produits/ak-47)
+export const ak47Product: Product = {
+  id: "prod-ak47",
+  slug: "ak-47",
+  customUrl: "/produits/ak-47",
+  name: "AK 47 – Dûre au lit",
+  category: "Intime & Vigueur Masculine",
+  shortDescription:
+    "Préparation naturelle pour une meilleure endurance sexuelle et une expérience intime plus satisfaisante.",
+  description:
+    "Le produit AK 47 – Dûre au lit est un produit naturel pour une meilleure endurance sexuelle et une expérience intime plus satisfaisante. Spécialement formulé pour les hommes qui souhaitent améliorer leur endurance sexuelle et prolonger leur durée au lit.",
+  price: 8000,
+  originalPrice: 15000,
+  savings: 7000,
+  currency: "FCFA",
+  image: "/img/ak47_product.png",
+  posterImage: "/img/ak47_poster.png",
+  available: true,
+  salesCount: 2450,
+  rating: 4.95,
+  reviewsCount: 189,
+  certification: "Phytothérapie Végétale Traditionnelle 🇧🇯",
+  ingredients: [
+    {
+      name: "Plantes Végétales Ancestrales",
+      icon: "🌿",
+      desc: "Sélection d'écorces et feuilles médicinales pour l'endurance et le contrôle.",
+    },
+  ],
+  posology: {
+    instruction:
+      "Prendre un verre de thé du produit AK 47 15 minutes avant le rapport intime.",
+    recommendation:
+      "Formule 100% naturelle sans additifs chimiques. Conserver à l'abri de l'humidité.",
+  },
+  keyPoints: [
+    {
+      title: "Endurance Décuplée",
+      desc: "Prolonge la durée des rapports sexuels sans épuisement.",
+    },
+    {
+      title: "Contrôle d'Éjaculation",
+      desc: "Maîtrise absolue du rythme et du réflexe éjaculatoire.",
+    },
+    {
+      title: "100% Naturel & Bio",
+      desc: "Garantie sans chimie ni maux de tête.",
+    },
+  ],
+};
+
 export const productsData: Product[] = [
+  ak47Product,
   {
     id: "prod-1",
     slug: "ulcere-hemorroide",

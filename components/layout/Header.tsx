@@ -15,6 +15,11 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname();
 
+  // Hide header on dedicated AK-47 product page as requested
+  if (pathname === "/produits/ak-47" || pathname?.startsWith("/produits/ak-47")) {
+    return null;
+  }
+
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 20) {

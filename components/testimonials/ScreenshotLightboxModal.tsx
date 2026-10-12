@@ -105,7 +105,7 @@ export default function ScreenshotLightboxModal({ screenshot, onClose }: Lightbo
             </div>
 
             <a
-              href={`https://wa.me/22900000000?text=${encodeURIComponent(`Bonjour Prince Adayé, j'ai vu le témoignage de ${screenshot.name} et je voudrais des conseils pour la même situation.`)}`}
+              href={`https://wa.me/22900000000?text=${encodeURIComponent(`Bonjour Togbé Adayé, j'ai vu le témoignage de ${screenshot.name} et je voudrais des conseils pour la même situation.`)}`}
               target="_blank"
               rel="noopener noreferrer"
               className="w-full inline-flex items-center justify-center gap-2 py-3 rounded-xl bg-[#25D366] hover:bg-[#20bd5a] text-black font-bold text-sm transition-all shadow-lg shadow-[#25D366]/20"

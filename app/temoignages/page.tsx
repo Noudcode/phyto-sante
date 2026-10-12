@@ -237,7 +237,7 @@ export default function TemoignagesPage() {
               </h3>
 
               <p className="text-gray-200 text-sm sm:text-base leading-relaxed mb-6 max-w-2xl font-light">
-                Partagez votre histoire ou votre message vocal directement avec Prince Adayé sur WhatsApp. Votre témoignage aide d&apos;autres personnes à retrouver la santé et l&apos;espoir.
+                Partagez votre histoire ou votre message vocal directement avec Togbé Adayé sur WhatsApp. Votre témoignage aide d&apos;autres personnes à retrouver la santé et l&apos;espoir.
               </p>
 
               <div className="flex flex-wrap items-center gap-4 text-xs text-gray-300">
@@ -254,7 +254,7 @@ export default function TemoignagesPage() {
 
             <div className="lg:col-span-4 flex flex-col items-stretch sm:items-center lg:items-end">
               <a
-                href="https://wa.me/22900000000?text=Bonjour%20Prince%20Aday%C3%A9%2C%20je%20souhaite%20vous%20envoyer%20mon%20t%C3%A9moignage%20suite%20%C3%A0%20mon%20traitement."
+                href="https://wa.me/22900000000?text=Bonjour%20Togb%C3%A9%20Aday%C3%A9%2C%20je%20souhaite%20vous%20envoyer%20mon%20t%C3%A9moignage%20suite%20%C3%A0%20mon%20traitement."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-2xl bg-[#25D366] hover:bg-[#20bd5a] text-black font-bold text-base transition-all duration-300 shadow-xl shadow-[#25D366]/20 hover:scale-[1.03]"
