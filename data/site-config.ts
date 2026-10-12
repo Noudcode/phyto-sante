@@ -21,7 +21,7 @@ export const siteConfig = {
     whatsappDefaultMessage: "Bonjour Phyto Santé, je souhaite avoir plus d'informations sur vos accompagnements et solutions naturelles.",
   },
   socials: {
-    facebook: "#",
+    facebook: "https://web.facebook.com/profile.php?id=61595420487056",
     instagram: "#",
     youtube: "#",
     whatsapp: "https://wa.me/22605855017",

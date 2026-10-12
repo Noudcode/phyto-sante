@@ -35,7 +35,7 @@ export default function ProductCard({ product }: ProductCardProps) {
     <div className="bg-white rounded-2xl overflow-hidden border border-[#D4A843]/20 shadow-sm hover:shadow-xl hover:border-[#B8860B]/40 transition-all duration-300 flex flex-col justify-between group touch-active">
       {/* Top Image Frame */}
       <div className="relative aspect-[4/3] overflow-hidden bg-gradient-to-br from-emerald-950/5 via-amber-900/5 to-emerald-900/10">
-        <Link href={detailUrl} className="block w-full h-full relative cursor-pointer">
+        <Link href={detailUrl} prefetch={true} className="block w-full h-full relative cursor-pointer">
           <Image
             src={product.image}
             alt={product.name}
@@ -64,6 +64,7 @@ export default function ProductCard({ product }: ProductCardProps) {
         <div className="absolute bottom-2.5 right-2.5 sm:opacity-0 group-hover:opacity-100 transition-all duration-300">
           <Link
             href={detailUrl}
+            prefetch={true}
             className="bg-white/90 backdrop-blur-md text-[#1B4332] text-[11px] font-semibold px-2.5 py-1 rounded-full shadow-lg flex items-center gap-1 hover:bg-white"
           >
             <span>Détails</span>
@@ -91,7 +92,7 @@ export default function ProductCard({ product }: ProductCardProps) {
 
           {/* Product Title */}
           <h3 className="font-serif text-base sm:text-lg font-bold text-[#1B4332] leading-snug group-hover:text-[#B8860B] transition-colors line-clamp-2">
-            <Link href={detailUrl} className="hover:underline">
+            <Link href={detailUrl} prefetch={true} className="hover:underline">
               {product.name}
             </Link>
           </h3>

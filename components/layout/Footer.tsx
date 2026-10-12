@@ -103,8 +103,10 @@ export default function Footer() {
             <div className="flex items-center gap-3 pt-2">
               <a
                 href={siteConfig.socials.facebook}
-                aria-label="Facebook"
-                className="w-9 h-9 rounded-full bg-[#1B4332] border border-[#B8860B]/40 flex items-center justify-center text-white hover:bg-[#D4A843] hover:text-[#1A1A1A] transition-all"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook Cabinet Phyto Santé"
+                className="w-9 h-9 rounded-full bg-[#1B4332] border border-[#B8860B]/40 flex items-center justify-center text-white hover:bg-[#D4A843] hover:text-[#1A1A1A] transition-all hover:scale-105"
               >
                 <Facebook className="w-4 h-4" />
               </a>

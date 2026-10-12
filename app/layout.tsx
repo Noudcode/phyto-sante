@@ -19,6 +19,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://phytosante.site"),
   title: `${siteConfig.name} — ${siteConfig.tagline}`,
   description: siteConfig.description,
   keywords: [
@@ -30,7 +31,23 @@ export const metadata: Metadata = {
     "Bien-être intime",
     "Harmonie conjugale",
     "Tradition béninoise",
+    "Phytothérapie Burkina Faso",
+    "AK 47 Dûre au lit",
   ],
+  alternates: {
+    canonical: "https://phytosante.site",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   icons: {
     icon: [
       { url: "/images/logo_emblem.png" },
@@ -40,8 +57,9 @@ export const metadata: Metadata = {
     apple: "/images/logo_emblem.png",
   },
   openGraph: {
-    title: siteConfig.name,
+    title: `${siteConfig.name} — ${siteConfig.tagline}`,
     description: siteConfig.description,
+    url: "https://phytosante.site",
     siteName: siteConfig.name,
     type: "website",
     locale: "fr_FR",
@@ -53,6 +71,12 @@ export const metadata: Metadata = {
         alt: siteConfig.name,
       },
     ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${siteConfig.name} — ${siteConfig.tagline}`,
+    description: siteConfig.description,
+    images: ["/images/logo_emblem.png"],
   },
 };
 
