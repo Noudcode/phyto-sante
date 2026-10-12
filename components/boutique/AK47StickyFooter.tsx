@@ -22,13 +22,17 @@ export default function AK47StickyFooter() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  if (!isVisible) return null;
-
   const orderMessage = `Bonjour Phyto Santé, je souhaite commander le produit AK 47 – Dûre au lit (15 000 FCFA).`;
   const whatsappUrl = `https://wa.me/${siteConfig.contact.whatsappNumber}?text=${encodeURIComponent(orderMessage)}`;
 
   return (
-    <div className="fixed bottom-0 inset-x-0 z-40 bg-[#071710]/95 backdrop-blur-xl border-t border-[#D4A843]/30 p-3 sm:py-3.5 shadow-2xl transition-all duration-300">
+    <div
+      className={`fixed bottom-0 inset-x-0 z-40 bg-[#071710]/95 backdrop-blur-xl border-t border-[#D4A843]/30 p-3 sm:py-3.5 shadow-2xl transition-all duration-300 ${
+        isVisible
+          ? "translate-y-0 opacity-100 pointer-events-auto"
+          : "translate-y-full opacity-0 pointer-events-none"
+      }`}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4">
         
         {/* Left: Product & Price Info */}

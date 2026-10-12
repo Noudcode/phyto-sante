@@ -27,8 +27,6 @@ export default function FloatingWhatsApp() {
     return null;
   }
 
-  if (!isVisible) return null;
-
   const whatsappUrl = `https://wa.me/${siteConfig.contact.whatsappNumber}?text=${encodeURIComponent(
     siteConfig.contact.whatsappDefaultMessage
   )}`;
@@ -44,6 +42,10 @@ export default function FloatingWhatsApp() {
       aria-label="Échanger avec Phyto Santé sur WhatsApp"
       className={`fixed right-4 sm:right-6 z-40 flex items-center gap-2.5 bg-[#25D366] hover:bg-[#20bd5a] text-white p-3 sm:px-5 sm:py-3.5 rounded-full shadow-2xl hover:shadow-[#25D366]/40 transition-all duration-300 transform hover:scale-105 active:scale-95 group ${
         isProductPage ? "bottom-20 sm:bottom-6" : "bottom-6"
+      } ${
+        isVisible
+          ? "opacity-100 scale-100 pointer-events-auto"
+          : "opacity-0 scale-75 pointer-events-none"
       }`}
     >
       <MessageCircle className="w-5 h-5 sm:w-6 sm:h-6 fill-current animate-bounce shrink-0" />

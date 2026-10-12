@@ -31,6 +31,7 @@ export default function ProtectionProvider({ children }: { children: React.React
       // Block Ctrl+C (Copy), Ctrl+S (Save), Ctrl+U (View Source), Ctrl+P (Print)
       if (
         (e.ctrlKey || e.metaKey) &&
+        e.key &&
         ["c", "s", "u", "p"].includes(e.key.toLowerCase())
       ) {
         e.preventDefault();

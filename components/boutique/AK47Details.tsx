@@ -20,7 +20,8 @@ import { siteConfig } from "@/data/site-config";
 // 4 Feature Cards corresponding exactly to Capture 1
 const featureCards = [
   {
-    icon: <Clock className="w-5 h-5 text-amber-400" />,
+    icon: Clock,
+    iconColor: "text-amber-400",
     iconBg: "border-amber-500/30 bg-amber-950/30",
     title: "Endurance Sexuelle",
     description:
@@ -29,7 +30,8 @@ const featureCards = [
     badgeColor: "text-[#D4A843]",
   },
   {
-    icon: <Flame className="w-5 h-5 text-rose-400" />,
+    icon: Flame,
+    iconColor: "text-rose-400",
     iconBg: "border-rose-500/30 bg-rose-950/30",
     title: "Contrôle de l'Éjaculation",
     description:
@@ -38,7 +40,8 @@ const featureCards = [
     badgeColor: "text-rose-400",
   },
   {
-    icon: <Zap className="w-5 h-5 text-emerald-400" />,
+    icon: Zap,
+    iconColor: "text-emerald-400",
     iconBg: "border-emerald-500/30 bg-emerald-950/30",
     title: "Puissance & Vitalité",
     description:
@@ -47,7 +50,8 @@ const featureCards = [
     badgeColor: "text-emerald-400",
   },
   {
-    icon: <Sparkles className="w-5 h-5 text-[#D4A843]" />,
+    icon: Sparkles,
+    iconColor: "text-[#D4A843]",
     iconBg: "border-[#D4A843]/30 bg-amber-950/30",
     title: "Fierté & Complicité",
     description:
@@ -286,16 +290,18 @@ export default function AK47Details() {
 
           {/* 4 Feature Cards Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {featureCards.map((card, idx) => (
-              <div
-                key={idx}
-                className="bg-[#0B2217] rounded-2xl border border-emerald-800/50 p-6 sm:p-7 flex flex-col justify-between space-y-6 shadow-xl hover:border-[#D4A843]/50 hover:-translate-y-1 transition-all duration-300 group"
-              >
-                <div className="space-y-4">
-                  {/* Icon Frame */}
-                  <div className={`w-11 h-11 rounded-xl border flex items-center justify-center ${card.iconBg}`}>
-                    {card.icon}
-                  </div>
+            {featureCards.map((card, idx) => {
+              const IconComponent = card.icon;
+              return (
+                <div
+                  key={idx}
+                  className="bg-[#0B2217] rounded-2xl border border-emerald-800/50 p-6 sm:p-7 flex flex-col justify-between space-y-6 shadow-xl hover:border-[#D4A843]/50 hover:-translate-y-1 transition-all duration-300 group"
+                >
+                  <div className="space-y-4">
+                    {/* Icon Frame */}
+                    <div className={`w-11 h-11 rounded-xl border flex items-center justify-center ${card.iconBg}`}>
+                      <IconComponent className={`w-5 h-5 ${card.iconColor}`} />
+                    </div>
 
                   {/* Title & Description */}
                   <h3 className="text-lg font-serif font-bold text-white tracking-wide">
@@ -313,8 +319,9 @@ export default function AK47Details() {
                   </span>
                 </div>
               </div>
-            ))}
-          </div>
+            );
+          })}
+        </div>
         </div>
 
       </Container>
