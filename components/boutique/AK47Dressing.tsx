@@ -257,13 +257,13 @@ export default function AK47Dressing() {
                 </div>
 
                 {/* Author Info */}
-                <div className="pt-3 border-t border-emerald-900/80 flex items-center justify-between">
-                  <div className="flex items-center gap-3">
-                    <div className="w-9 h-9 rounded-full bg-gradient-to-br from-[#1B4332] to-[#2D6A4F] text-[#D4A843] font-bold text-xs flex items-center justify-center border border-[#D4A843]/40 shadow-sm">
+                <div className="pt-3 border-t border-emerald-900/80 flex items-center justify-between gap-2">
+                  <div className="flex items-center gap-3 min-w-0">
+                    <div className="w-10 h-10 min-w-10 min-h-10 shrink-0 aspect-square rounded-full bg-gradient-to-br from-[#1B4332] to-[#2D6A4F] text-[#D4A843] font-bold text-sm flex items-center justify-center border border-[#D4A843]/50 shadow-md">
                       {rev.author.charAt(0)}
                     </div>
-                    <div>
-                      <h4 className="font-semibold text-xs sm:text-sm text-white">
+                    <div className="min-w-0">
+                      <h4 className="font-semibold text-xs sm:text-sm text-white truncate">
                         {rev.author}
                       </h4>
                       <span className="text-[10px] text-gray-400 block">{rev.date}</span>

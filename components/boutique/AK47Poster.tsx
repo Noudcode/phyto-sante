@@ -7,6 +7,7 @@ import {
   ShieldCheck,
   Maximize2,
   MessageCircle,
+  PhoneCall,
   ExternalLink,
 } from "lucide-react";
 import { siteConfig } from "@/data/site-config";
@@ -90,14 +91,14 @@ export default function AK47Poster() {
 
             {/* Action Buttons Row */}
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-2">
-              {/* Button 1: Open Grand Format Poster */}
-              <button
-                onClick={() => setIsLightboxOpen(true)}
-                className="inline-flex items-center justify-center gap-2 py-3.5 px-6 rounded-xl bg-[#0B2217] hover:bg-[#113123] text-white font-bold text-xs uppercase tracking-wider border border-[#D4A843]/40 shadow-lg transition-all touch-active"
+              {/* Button 1: Appel Téléphonique Direct (ouvre l'application d'appel sur smartphone) */}
+              <a
+                href={`tel:+${siteConfig.contact.whatsappNumber}`}
+                className="inline-flex items-center justify-center gap-2 py-3.5 px-6 rounded-xl bg-[#0B2217] hover:bg-[#113123] text-white hover:text-[#D4A843] font-bold text-xs uppercase tracking-wider border border-[#D4A843]/40 shadow-lg transition-all touch-active"
               >
-                <Maximize2 className="w-4 h-4 text-[#D4A843]" />
-                <span>Voir le produit</span>
-              </button>
+                <PhoneCall className="w-4 h-4 text-[#D4A843]" />
+                <span>APPELER DIRECTEMENT</span>
+              </a>
 
               {/* Button 2: WhatsApp Order */}
               <a

@@ -251,19 +251,43 @@ export default function AK47Details() {
                 </p>
 
                 {/* Micro-puces visuelles d'accroche */}
-                <div className="flex flex-wrap gap-2.5 pt-1 text-xs">
-                  <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-emerald-950/90 border border-emerald-700/60 text-emerald-300 font-medium shadow-sm">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
-                    Endurance prolongée
-                  </span>
-                  <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-amber-950/90 border border-amber-700/60 text-amber-300 font-medium shadow-sm">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-amber-400" />
-                    Maîtrise du rythme
-                  </span>
-                  <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#0B2217] border border-[#D4A843]/50 text-[#E6C875] font-medium shadow-sm">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-[#D4A843]" />
-                    Confiance au lit retrouvée
-                  </span>
+                {/* Mobile : 2 au premier rang (gauche / droite) et 1 au second rang (centré) selon le schéma de la capture */}
+                <div className="pt-1">
+                  {/* Vue Mobile (< sm) : 2 puces en haut, 1 puce centrée en bas */}
+                  <div className="flex sm:hidden flex-col items-center gap-2 w-full">
+                    <div className="flex items-center justify-center gap-2 w-full">
+                      <span className="flex-1 inline-flex items-center justify-center gap-1.5 px-2.5 py-1.5 rounded-full bg-emerald-950/90 border border-emerald-700/60 text-emerald-300 font-medium text-[11px] shadow-sm text-center">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                        <span className="whitespace-nowrap">Endurance prolongée</span>
+                      </span>
+                      <span className="flex-1 inline-flex items-center justify-center gap-1.5 px-2.5 py-1.5 rounded-full bg-amber-950/90 border border-amber-700/60 text-amber-300 font-medium text-[11px] shadow-sm text-center">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-amber-400 shrink-0" />
+                        <span className="whitespace-nowrap">Maîtrise du rythme</span>
+                      </span>
+                    </div>
+                    <div className="flex justify-center w-full">
+                      <span className="inline-flex items-center justify-center gap-1.5 px-4 py-1.5 rounded-full bg-[#0B2217] border border-[#D4A843]/50 text-[#E6C875] font-medium text-[11px] shadow-sm text-center">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-[#D4A843] shrink-0" />
+                        <span className="whitespace-nowrap">Confiance au lit retrouvée</span>
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Vue Desktop / Tablette (>= sm) : alignement horizontal fluide */}
+                  <div className="hidden sm:flex flex-wrap gap-2.5 text-xs">
+                    <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-emerald-950/90 border border-emerald-700/60 text-emerald-300 font-medium shadow-sm">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
+                      Endurance prolongée
+                    </span>
+                    <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-amber-950/90 border border-amber-700/60 text-amber-300 font-medium shadow-sm">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-amber-400" />
+                      Maîtrise du rythme
+                    </span>
+                    <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#0B2217] border border-[#D4A843]/50 text-[#E6C875] font-medium shadow-sm">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-[#D4A843]" />
+                      Confiance au lit retrouvée
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>

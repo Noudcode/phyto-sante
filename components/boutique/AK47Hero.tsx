@@ -80,21 +80,21 @@ export default function AK47Hero() {
           </div>
 
           {/* QUICK HERO CTA (MOBILE & DESKTOP) */}
-          <div className="pt-10 sm:pt-14 mt-2 sm:mt-4 flex flex-col sm:flex-row items-center justify-center gap-3.5 sm:gap-4 w-full sm:w-auto px-2">
-            {/* Button 1: PUISSANT ET VITALITE (Orange Gradient like homepage hero) */}
+          <div className="pt-10 sm:pt-14 mt-2 sm:mt-4 flex flex-col sm:flex-row items-center justify-center gap-3.5 sm:gap-4 w-full sm:w-auto px-4">
+            {/* Button 1: PUISSANT ET VITALITE (Orange Gradient - Centré sur mobile, côte à côte sur PC) */}
             <a
               href="https://wa.me/22605855017?text=Bonjour%20Phyto%20Sant%C3%A9%2C%20je%20souhaite%20commander%20le%20produit%20%3A%20AK%2047%20%E2%80%93%20D%C3%BBre%20au%20lit%20(Offre%20Promo%20%3A%208%20000%20FCFA)."
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 rounded-full bg-gradient-to-r from-[#FF6B00] via-[#F4511E] to-[#D83600] hover:from-[#E65C00] hover:to-[#C02E00] text-white font-bold text-sm sm:text-base border border-[#FF6B00]/40 shadow-xl shadow-[#FF6B00]/30 transition-all duration-300 transform active:scale-95 touch-active uppercase tracking-wide text-center"
+              className="w-full max-w-xs sm:max-w-none sm:w-auto inline-flex items-center justify-center px-8 py-4 rounded-full bg-gradient-to-r from-[#FF6B00] via-[#F4511E] to-[#D83600] hover:from-[#E65C00] hover:to-[#C02E00] text-white font-bold text-sm sm:text-base border border-[#FF6B00]/40 shadow-xl shadow-[#FF6B00]/30 transition-all duration-300 transform active:scale-95 touch-active uppercase tracking-wide text-center"
             >
               <span>PUISSANT ET VITALITE</span>
             </a>
 
-            {/* Button 2: Green button */}
+            {/* Button 2: Vert - Uniquement sur écran large (masqué sur mobile) */}
             <a
               href="#details"
-              className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 rounded-full bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-sm sm:text-base shadow-xl hover:shadow-[#25D366]/30 border border-[#25D366] transition-all duration-300 transform active:scale-95 touch-active text-center"
+              className="hidden sm:inline-flex items-center justify-center px-8 py-4 rounded-full bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-sm sm:text-base shadow-xl hover:shadow-[#25D366]/30 border border-[#25D366] transition-all duration-300 transform active:scale-95 touch-active text-center"
             >
               <span>Découvrir la formule</span>
             </a>
